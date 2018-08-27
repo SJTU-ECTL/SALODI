@@ -1,0 +1,43 @@
+# Benchmark "sinpix" written by ABC on Wed Feb 07 01:32:15 2018
+.model sinpix
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11 x12 x13 x14
+.outputs z0
+.default_input_arrival 0 0
+.gate inv1   a=x07 O=n16
+.gate inv1   a=x08 O=n17
+.gate inv1   a=x09 O=n18
+.gate nand3  a=n18 b=n17 c=n16 O=n19
+.gate nand3  a=x06 b=x05 c=x00 O=n20
+.gate inv1   a=n20 O=n21
+.gate nand3  a=x03 b=x02 c=x01 O=n22
+.gate inv1   a=n22 O=n23
+.gate nand2  a=n23 b=n21 O=n24
+.gate inv1   a=x01 O=n25
+.gate inv1   a=x05 O=n26
+.gate nor2   a=x06 b=x00 O=n27
+.gate nor2   a=x04 b=x02 O=n28
+.gate nand4  a=n27 b=n26 c=n25 d=n28 O=n29
+.gate nand2  a=n29 b=n24 O=n30
+.gate nand2  a=n30 b=n19 O=n31
+.gate nand2  a=n17 b=n16 O=n32
+.gate and2   a=x03 b=x02 O=n33
+.gate nand3  a=n33 b=n21 c=x04 O=n34
+.gate nor2   a=x03 b=x02 O=n35
+.gate nand4  a=n27 b=n26 c=n25 d=n35 O=n36
+.gate nand2  a=n36 b=n34 O=n37
+.gate aoi21  a=x12 b=x07 c=x11 O=n38
+.gate nor2   a=x10 b=x09 O=n39
+.gate oai21  a=n38 b=n17 c=n39 O=n40
+.gate nand3  a=n40 b=n37 c=n32 O=n41
+.gate nor3   a=x06 b=x05 c=x00 O=n42
+.gate nand2  a=x02 b=x01 O=n43
+.gate nor2   a=x04 b=x03 O=n44
+.gate nand2  a=n44 b=n43 O=n45
+.gate inv1   a=n45 O=n46
+.gate nand4  a=x05 b=x04 c=x00 d=x06 O=n47
+.gate oai21  a=x03 b=x02 c=x01 O=n48
+.gate nor2   a=n48 b=n47 O=n49
+.gate aoi21  a=n46 b=n42 c=n49 O=n50
+.gate nand3  a=n50 b=n41 c=n31 O=n51
+.gate inv1   a=n51 O=z0
+.end

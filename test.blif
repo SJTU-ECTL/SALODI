@@ -1,0 +1,9 @@
+# Benchmark "cosx" written by ABC on Wed Feb 07 00:45:03 2018
+.model cosx
+.inputs x00 x01 x02 x03
+.outputs z0
+.default_input_arrival 0 0
+.gate and2  a=x00 b=x01 O=n4
+.gate inv1  a=x02 O=n5
+.gate nand3  a=n4 b=n5 c=x03 O=z0
+.end

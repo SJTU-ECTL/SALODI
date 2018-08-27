@@ -1,0 +1,15 @@
+# Benchmark "exp-x_4" written by ABC on Thu Apr 26 14:26:58 2018
+.model exp-x_4
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.gate inv1   a=x06 O=n13
+.gate nor2   a=x10 b=x05 O=n14
+.gate nor2   a=x08 b=x04 O=n15
+.gate nor2   a=x09 b=x07 O=n16
+.gate nand4  a=n15 b=n14 c=n13 d=n16 O=n17
+.gate nand2  a=x03 b=x00 O=n18
+.gate oai21  a=x02 b=x01 c=n18 O=n19
+.gate nand2  a=x02 b=x01 O=n20
+.gate oai21  a=x03 b=x00 c=n20 O=n21
+.gate nand3  a=n21 b=n19 c=n17 O=z0
+.end

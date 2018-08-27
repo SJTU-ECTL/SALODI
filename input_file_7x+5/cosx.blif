@@ -1,0 +1,26 @@
+# Benchmark "cosx" written by ABC on Wed Feb 07 00:45:03 2018
+.model cosx
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11 x12 x13 x14
+.outputs z0
+.default_input_arrival 0 0
+.gate oai22  a=x12 b=x13 c=x09 d=x08 O=n16
+.gate oai21  a=x14 b=x08 c=x09 O=n17
+.gate nand4  a=n16 b=x06 c=x05 d=n17 O=n18
+.gate inv1   a=x10 O=n19
+.gate inv1   a=x11 O=n20
+.gate nand3  a=n20 b=n19 c=x03 O=n21
+.gate nand2  a=n21 b=x02 O=n22
+.gate inv1   a=x08 O=n23
+.gate inv1   a=x09 O=n24
+.gate nand2  a=n24 b=n23 O=n25
+.gate nand2  a=n24 b=x02 O=n26
+.gate nand3  a=n26 b=n25 c=x04 O=n27
+.gate inv1   a=x04 O=n28
+.gate inv1   a=x03 O=n29
+.gate nand3  a=n20 b=n19 c=n29 O=n30
+.gate nand2  a=n30 b=n28 O=n31
+.gate nand3  a=n31 b=n27 c=n22 O=n32
+.gate nand3  a=x07 b=x01 c=x00 O=n33
+.gate inv1   a=n33 O=n34
+.gate oai21  a=n32 b=n18 c=n34 O=z0
+.end

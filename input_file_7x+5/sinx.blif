@@ -1,0 +1,40 @@
+# Benchmark "sin(x)" written by ABC on Tue Feb 06 22:51:56 2018
+.model sin(x)
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11 x12 x13 x14
+.outputs z0
+.default_input_arrival 0 0
+.gate nor2   a=x03 b=x01 O=n16
+.gate nor2   a=x08 b=x07 O=n17
+.gate nor2   a=x04 b=x00 O=n18
+.gate nand3  a=n18 b=n17 c=n16 O=n19
+.gate inv1   a=n19 O=n20
+.gate nor2   a=x12 b=x11 O=n21
+.gate nor3   a=x13 b=x09 c=x02 O=n22
+.gate inv1   a=x10 O=n23
+.gate nand2  a=n23 b=x05 O=n24
+.gate inv1   a=x03 O=n25
+.gate inv1   a=x14 O=n26
+.gate nand3  a=n26 b=x06 c=n25 O=n27
+.gate nand2  a=n27 b=n24 O=n28
+.gate nand3  a=n28 b=n22 c=n21 O=n29
+.gate inv1   a=n29 O=n30
+.gate aoi21  a=n30 b=n20 c=x06 O=n31
+.gate nor2   a=x10 b=x03 O=n32
+.gate oai21  a=x14 b=n25 c=x09 O=n33
+.gate nor2   a=x13 b=x12 O=n34
+.gate aoi21  a=n34 b=n33 c=n32 O=n35
+.gate inv1   a=x11 O=n36
+.gate nand2  a=n36 b=x05 O=n37
+.gate oai21  a=n37 b=n35 c=x02 O=n38
+.gate nand2  a=n38 b=x04 O=n39
+.gate oai21  a=x12 b=x11 c=x09 O=n40
+.gate nand3  a=n23 b=x05 c=x04 O=n41
+.gate inv1   a=n41 O=n42
+.gate nor3   a=x10 b=x03 c=x02 O=n43
+.gate oai21  a=n43 b=n42 c=n40 O=n44
+.gate nand4  a=x07 b=x01 c=x00 d=x08 O=n45
+.gate inv1   a=n45 O=n46
+.gate nand3  a=n46 b=n44 c=n29 O=n47
+.gate inv1   a=n47 O=n48
+.gate aoi21  a=n48 b=n39 c=n31 O=z0
+.end

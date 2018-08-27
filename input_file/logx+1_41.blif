@@ -1,0 +1,32 @@
+# Benchmark "logx+1_41" written by ABC on Thu Apr 26 14:22:00 2018
+.model logx+1_41
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.default_input_arrival 0 0
+.gate or2    a=x11 b=x01 O=n13
+.gate inv1   a=x04 O=n14
+.gate aoi21  a=x02 b=x01 c=n14 O=n15
+.gate nand2  a=n15 b=n13 O=n16
+.gate inv1   a=x07 O=n17
+.gate inv1   a=x08 O=n18
+.gate nand3  a=n18 b=n17 c=x03 O=n19
+.gate inv1   a=x09 O=n20
+.gate inv1   a=x10 O=n21
+.gate nand2  a=n21 b=n20 O=n22
+.gate nor2   a=n22 b=n19 O=n23
+.gate inv1   a=x06 O=n24
+.gate nand2  a=x07 b=x04 O=n25
+.gate nand3  a=n25 b=n24 c=x03 O=n26
+.gate inv1   a=n26 O=n27
+.gate aoi21  a=n23 b=n16 c=n27 O=n28
+.gate inv1   a=x00 O=n29
+.gate nand4  a=n17 b=n24 c=x03 d=n18 O=n30
+.gate inv1   a=x05 O=n31
+.gate nand3  a=n31 b=n14 c=x01 O=n32
+.gate nand2  a=n32 b=n30 O=n33
+.gate inv1   a=x02 O=n34
+.gate oai21  a=n34 b=x01 c=n20 O=n35
+.gate nand2  a=n35 b=x04 O=n36
+.gate aoi21  a=n36 b=n33 c=n29 O=n37
+.gate oai21  a=n28 b=x05 c=n37 O=z0
+.end

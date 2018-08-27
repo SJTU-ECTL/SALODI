@@ -1,0 +1,28 @@
+# Benchmark "logx+1_43" written by ABC on Thu Apr 26 14:22:12 2018
+.model logx+1_43
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.gate inv1   a=x06 O=n13
+.gate nand2  a=n13 b=x03 O=n14
+.gate inv1   a=x02 O=n15
+.gate inv1   a=x09 O=n16
+.gate oai21  a=n15 b=x01 c=n16 O=n17
+.gate aoi21  a=n17 b=x04 c=n14 O=n18
+.gate nor2   a=x11 b=x06 O=n19
+.gate and2   a=x03 b=x02 O=n20
+.gate oai21  a=n20 b=n19 c=x01 O=n21
+.gate inv1   a=x04 O=n22
+.gate nand2  a=n22 b=x03 O=n23
+.gate inv1   a=x05 O=n24
+.gate inv1   a=x10 O=n25
+.gate nand3  a=n25 b=n16 c=n24 O=n26
+.gate aoi21  a=n23 b=n21 c=n26 O=n27
+.gate nor2   a=x08 b=x07 O=n28
+.gate oai21  a=n27 b=n18 c=n28 O=n29
+.gate inv1   a=x00 O=n30
+.gate oai21  a=n14 b=x07 c=x04 O=n31
+.gate inv1   a=x01 O=n32
+.gate aoi21  a=n14 b=n32 c=x05 O=n33
+.gate aoi21  a=n33 b=n31 c=n30 O=n34
+.gate nand2  a=n34 b=n29 O=z0
+.end

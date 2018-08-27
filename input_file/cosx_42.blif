@@ -1,0 +1,14 @@
+# Benchmark "cosx_42" written by ABC on Thu Apr 26 14:19:31 2018
+.model cosx_42
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.default_input_arrival 0 0
+.gate inv1   a=x06 O=n13
+.gate nand3  a=n13 b=x03 c=x01 O=n14
+.gate oai21  a=x10 b=x09 c=x05 O=n15
+.gate nor2   a=x08 b=x07 O=n16
+.gate nand2  a=n16 b=n15 O=n17
+.gate nand3  a=x04 b=x02 c=x00 O=n18
+.gate inv1   a=n18 O=n19
+.gate oai21  a=n17 b=n14 c=n19 O=z0
+.end

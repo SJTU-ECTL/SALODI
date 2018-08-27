@@ -1,0 +1,31 @@
+# Benchmark "log(x+1)" written by ABC on Tue Feb 06 22:15:07 2018
+.model log(x+1)
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11 x12
+.outputs z0
+.gate inv1   a=x04 O=n14
+.gate nand2  a=x08 b=x06 O=n15
+.gate inv1   a=x01 O=n16
+.gate inv1   a=x02 O=n17
+.gate inv1   a=x06 O=n18
+.gate inv1   a=x08 O=n19
+.gate nand4  a=n18 b=n17 c=n16 d=n19 O=n20
+.gate nand2  a=n20 b=n15 O=n21
+.gate inv1   a=x07 O=n22
+.gate inv1   a=x11 O=n23
+.gate nand2  a=n23 b=n22 O=n24
+.gate inv1   a=x09 O=n25
+.gate inv1   a=x10 O=n26
+.gate inv1   a=x12 O=n27
+.gate nand3  a=n27 b=n26 c=n25 O=n28
+.gate nor2   a=n28 b=n24 O=n29
+.gate nand2  a=x05 b=x00 O=n30
+.gate aoi21  a=n29 b=n21 c=n30 O=n31
+.gate nand2  a=n22 b=x02 O=n32
+.gate nand2  a=n25 b=n16 O=n33
+.gate nand2  a=x10 b=x07 O=n34
+.gate nand2  a=n34 b=n19 O=n35
+.gate aoi21  a=n33 b=n32 c=n35 O=n36
+.gate aoi21  a=x07 b=x01 c=x06 O=n37
+.gate oai21  a=n37 b=n36 c=x03 O=n38
+.gate aoi21  a=n38 b=n31 c=n14 O=z0
+.end

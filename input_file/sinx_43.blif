@@ -1,0 +1,26 @@
+# Benchmark "sinx_43" written by ABC on Thu Apr 26 14:20:52 2018
+.model sinx_43
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.default_input_arrival 0 0
+.gate nor2   a=x07 b=x06 O=n13
+.gate nand4  a=x04 b=x01 c=x00 d=x05 O=n14
+.gate oai21  a=n14 b=n13 c=x03 O=n15
+.gate inv1   a=x07 O=n16
+.gate inv1   a=x03 O=n17
+.gate inv1   a=x02 O=n18
+.gate inv1   a=x04 O=n19
+.gate inv1   a=x05 O=n20
+.gate inv1   a=x06 O=n21
+.gate nand4  a=n20 b=n19 c=n18 d=n21 O=n22
+.gate inv1   a=x10 O=n23
+.gate inv1   a=x11 O=n24
+.gate nand4  a=n23 b=x01 c=x00 d=n24 O=n25
+.gate oai21  a=n25 b=n22 c=n17 O=n26
+.gate nand2  a=x11 b=x06 O=n27
+.gate nand4  a=n23 b=x03 c=x02 d=n27 O=n28
+.gate inv1   a=n28 O=n29
+.gate aoi21  a=n26 b=n16 c=n29 O=n30
+.gate or2    a=x09 b=x08 O=n31
+.gate oai21  a=n31 b=n30 c=n15 O=z0
+.end

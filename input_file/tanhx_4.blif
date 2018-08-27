@@ -1,0 +1,41 @@
+# Benchmark "tanhx_4" written by ABC on Thu Apr 26 14:21:25 2018
+.model tanhx_4
+.inputs x00 x01 x02 x03 x04 x05 x06 x07 x08 x09 x10 x11
+.outputs z0
+.default_input_arrival 0 0
+.gate inv1   a=x09 O=n13
+.gate inv1   a=x00 O=n14
+.gate nand3  a=x07 b=x03 c=n14 O=n15
+.gate inv1   a=x10 O=n16
+.gate nor2   a=x11 b=x07 O=n17
+.gate inv1   a=x03 O=n18
+.gate nor2   a=n18 b=x01 O=n19
+.gate nand3  a=n19 b=n17 c=n16 O=n20
+.gate nand2  a=x08 b=x06 O=n21
+.gate aoi21  a=n20 b=n15 c=n21 O=n22
+.gate inv1   a=x06 O=n23
+.gate nand2  a=n19 b=n23 O=n24
+.gate oai21  a=x11 b=x07 c=n23 O=n25
+.gate nor2   a=x10 b=n18 O=n26
+.gate inv1   a=x07 O=n27
+.gate nand2  a=n27 b=x06 O=n28
+.gate nand3  a=n28 b=n26 c=n25 O=n29
+.gate inv1   a=x08 O=n30
+.gate nand2  a=n30 b=x02 O=n31
+.gate aoi21  a=n29 b=n24 c=n31 O=n32
+.gate oai21  a=n32 b=n22 c=n13 O=n33
+.gate inv1   a=x02 O=n34
+.gate inv1   a=x01 O=n35
+.gate nand2  a=x03 b=n35 O=n36
+.gate inv1   a=x04 O=n37
+.gate aoi21  a=n37 b=x01 c=x03 O=n38
+.gate nor2   a=n16 b=n27 O=n39
+.gate oai22  a=n38 b=n34 c=n36 d=n39 O=n40
+.gate nand2  a=x05 b=x04 O=n41
+.gate nand2  a=n41 b=x03 O=n42
+.gate aoi21  a=n27 b=x02 c=n14 O=n43
+.gate nand2  a=n21 b=n19 O=n44
+.gate oai21  a=n44 b=n43 c=n42 O=n45
+.gate aoi21  a=n40 b=n14 c=n45 O=n46
+.gate nand2  a=n46 b=n33 O=z0
+.end
