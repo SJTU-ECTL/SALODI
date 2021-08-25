@@ -1,3 +1,5 @@
+# SALODI: Simultaneous Area and Latency Optimization for Stochastic Circuits by D Flip-Flop Insertion
+
 Source code for the following paper:
 
 Zhijing Li, Zhao Chen, Yili Zhang, Zixin Huang, and Weikang Qian, "[Simultaneous area and latency optimization for stochastic circuits by D flip-flop insertion](https://umji.sjtu.edu.cn/~wkqian/papers/Li_Chen_Zhang_Huang_Qian_Simultaneous_Area_and_Latency_Optimization_for_Stochastic_Circuits_by_D_Flip-flop_Insertion.pdf)," 
